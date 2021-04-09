@@ -9,5 +9,4 @@ public class StorkApplication {
     public static void main(String[] args) {
         SpringApplication.run(StorkApplication.class, args);
     }
-
 }

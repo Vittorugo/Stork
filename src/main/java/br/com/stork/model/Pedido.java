@@ -1,21 +1,31 @@
 package br.com.stork.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-//import javax.persistence.Entity;
-
-//@Entity
+@Entity
+@Table(name = "pedidos")
 public class Pedido {
 	
-	//@Id
-	//@GeneratedValue()
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
 	private String nomeProdutos;
 	private BigDecimal valorNegociado;
 	private LocalDate dataEntrega;
 	private String urlProduto;
 	private String descricao;
 	private String urlImagem;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getNomeProdutos() {
 		return nomeProdutos;
 	}
@@ -52,5 +62,14 @@ public class Pedido {
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Pedido{" +
+				"id=" + id +
+				", nomeProdutos='" + nomeProdutos + '\'' +
+				", valorNegociado=" + valorNegociado +
+				", descricao='" + descricao + '\'' +
+				'}';
+	}
 }
