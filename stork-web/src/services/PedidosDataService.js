@@ -1,4 +1,8 @@
-import axios from 'axios';
+import api from '../services/api';
 
-const API_URL = "http://localhost:8884";
+
+export default function retornaTodosPedidos(){
+   return api.get("/home");
+}
+
 

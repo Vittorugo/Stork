@@ -1,17 +1,15 @@
 import Head from 'next/head'
 import styles from '../../styles/Home.module.css'
+import CardPedido from '../components/CardPedido'
 import {
     Container,
     Jumbotron,
     Button,
-    Navbar, Nav, NavItem, NavLink,
-    Card, CardHeader, CardBody,
-    Row,
-    Col,
-    FormGroup, Input
+    Navbar, Nav, NavItem, NavLink
 } from 'reactstrap';
 
 export default function Home() {
+
     return (
         <div className={styles.container}>
             <Head>
@@ -47,37 +45,7 @@ export default function Home() {
                         </NavItem>
                     </Nav>
                 </Navbar>
-
-                <Card>
-                    <CardHeader>Nome do Produto</CardHeader>
-                    <CardBody>
-                        <Row xs="2">
-                            <Col>
-                                <Row>
-                                    <Col>
-                                        <label>Valor:</label>
-                                        <span>R$123</span>
-                                    </Col>
-                                    <Col>
-                                        <label>Data de entrega:</label>
-                                        <span>11/04/21</span>
-                                    </Col>
-                                </Row>
-                                <label>Produto</label>
-                                <FormGroup>
-                                    <Input type="textarea"  name="text"/>
-                                </FormGroup>
-                                <label>Descrição</label>
-                                <FormGroup>
-                                    <Input type="textarea" name="text"/>
-                                </FormGroup>
-                            </Col>
-                            <Col>
-                                <img src=""/>
-                            </Col>
-                        </Row>
-                    </CardBody>
-                </Card>
+                <CardPedido />
             </Container>
         </div>
     )

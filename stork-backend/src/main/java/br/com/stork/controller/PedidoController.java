@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin(origins={"http://localhost:3000"})
 @RestController
 @RequestMapping("/home")
-@CrossOrigin(origins={"http://localhost:3000"})
 public class PedidoController {
 
     @Autowired
     private PedidoRepository pedidoRepository;
-
+    
     @GetMapping
     public List<Pedido> litarPedidos(){
         return pedidoRepository.findAll();
