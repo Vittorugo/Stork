@@ -39,7 +39,7 @@ export default function Home() {
                     </Nav>
                     <Nav>
                         <NavItem>
-                            <NavLink href="">
+                            <NavLink href="pedidos/cadastro">
                                 <Button outline color="secondary">Novo</Button>
                             </NavLink>
                         </NavItem>

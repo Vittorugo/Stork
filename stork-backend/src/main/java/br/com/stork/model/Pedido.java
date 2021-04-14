@@ -1,8 +1,12 @@
 package br.com.stork.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "pedidos")
@@ -14,6 +18,10 @@ public class Pedido {
 
     private String nomeProdutos;
     private BigDecimal valorNegociado;
+
+
+    @DateTimeFormat(pattern = "dd/MM/yy")
+    @JsonFormat(pattern = "dd/MM/yy")
     private LocalDate dataEntrega;
     private String urlProduto;
     private String descricao;

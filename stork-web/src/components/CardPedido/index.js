@@ -1,4 +1,4 @@
-import retornaTodosPedidos from '../../services/PedidosDataService';
+import { retornaTodosPedidos } from '../../services/PedidosDataService';
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import {
@@ -31,7 +31,7 @@ export default function CardPedido() {
                      <Col className="col-8">
                         <Row >
                            <Col>
-                              <span>{`Valor: ${pedido.valorNegociado}`}</span>
+                              <span>{pedido.valorNegociado === null ? `Valor ainda não definido` : `Valor: ${pedido.valorNegociado}`}</span>
                            </Col>
                            <Col>
                               <span>{`Data de Entrega: ${pedido.dataEntrega}`}</span>
