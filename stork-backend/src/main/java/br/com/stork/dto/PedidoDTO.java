@@ -1,13 +1,18 @@
 package br.com.stork.dto;
 
 import br.com.stork.model.Pedido;
-
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 public class PedidoDTO {
 
+    @NotBlank
     private String nomeProduto;
+
+    @NotBlank
     private String dataEntrega;
+
+    @NotBlank
     private String urlProduto;
     private String urlImagem;
     private String descricao;

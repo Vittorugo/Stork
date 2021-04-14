@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 @CrossOrigin(origins={"http://localhost:3000"})
 @RestController
 @RequestMapping("/pedidos")
@@ -23,7 +25,7 @@ public class PedidoController {
     }
 
     @PostMapping("/cadastro")
-    public ResponseEntity<Pedido> cadastrar(@RequestBody PedidoDTO pedidoDTO){
+    public ResponseEntity<Pedido> cadastrar(@RequestBody @Valid PedidoDTO pedidoDTO){
         Pedido novoPedido = pedidoDTO.toPedido();
         pedidoRepository.save(novoPedido);
         return ResponseEntity.ok().body(novoPedido);
